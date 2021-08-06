@@ -13,11 +13,11 @@ static const char *fonts[]              = { "Iosevka Extended:size=11", "FuraCod
 static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
-static const char col_gray1[]           = "#222222";
-static const char col_gray2[]           = "#444444";
+static const char col_gray1[]           = "#05060b";
+static const char col_gray2[]           = "#D8DEE9";
 static const char col_gray3[]           = "#bbbbbb";
 static const char col_gray4[]           = "#eeeeee";
-static const char col_cyan[]            = "#005577";
+static const char col_cyan[]            = "#05060b";
 static const unsigned int baralpha     = 0xd0;
 static const unsigned int borderalpha  = OPAQUE;
 static const char *colors[][3]          = {
