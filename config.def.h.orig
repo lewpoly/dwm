@@ -78,7 +78,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -96,7 +96,7 @@ static const char *webcmd[]  = { "brave", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -c -l 10 -g 3") },
-	{ MODKEY,			                  XK_b,      spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
+	{ MODKEY,			                  XK_p,      spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
 	{ MODKEY,			                  XK_r,      spawn,		       SHCMD(TERMINAL " -e ranger") },
 	{ MODKEY,			                  XK_m,      spawn,		       SHCMD(TERMINAL " -e neomutt") },
 	{ MODKEY,			                  XK_y,      spawn,		       SHCMD("flameshot gui -p ~/pics/screenshots") },
@@ -114,8 +114,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY|Mod4Mask,              XK_x,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask,              XK_z,      incrgaps,       {.i = -1 } },
+	{ MODKEY|Mod4Mask,              XK_x,      incrgaps,       {.i = -1 } },
+	{ MODKEY|Mod4Mask,              XK_z,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask,              XK_g,      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_g,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -127,6 +127,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = +1 } },
