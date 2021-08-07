@@ -21,9 +21,6 @@ static const char *brdowncmd[]          = { "brightnessctl", "set", "10%-", NULL
 static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
-static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
-static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
-static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
 static const char col_gray1[]           = "#05060b";
 static const char col_gray2[]           = "#D8DEE9";
 static const char col_gray3[]           = "#bbbbbb";
@@ -99,7 +96,6 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *webcmd[]  = { "brave", NULL };
 
-#include <X11/XF86keysym.h>
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
