@@ -16,6 +16,11 @@ static const int swallowfloating        = 0;        /* 1 means swallow floating 
 static const int showbar                = 1;        /* 0 means no bar */
 static const int topbar                 = 1;        /* 0 means bottom bar */
 static const char *fonts[]              = { "Iosevka Extended:size=11", "FuraCode Nerd Font:size=11" };
+static const char *brupcmd[]            = { "brightnessctl", "set", "10%+", NULL };
+static const char *brdowncmd[]          = { "brightnessctl", "set", "10%-", NULL };
+static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
+static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
+static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
 static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
@@ -95,6 +100,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *webcmd[]  = { "brave", NULL };
 
 #include <X11/XF86keysym.h>
+#include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -c -l 10 -g 3") },
@@ -141,6 +147,8 @@ static Key keys[] = {
 	{ 0,                            XK_F11,    spawn,          {.v = downvol } },
 	{ 0,                            XK_F9,     spawn,          {.v = mutevol } },
 	{ 0,                            XK_F12,    spawn,          {.v = upvol   } },
+  { 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = brupcmd}},
+  { 0,                            XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd}},
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,         spawn, {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol   } },
