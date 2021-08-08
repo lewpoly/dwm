@@ -99,7 +99,7 @@ static const char *webcmd[]  = { "brave", NULL };
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -c -l 10 -g 3") },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -c -l 15") },
 	{ MODKEY,			                  XK_p,      spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
 	{ MODKEY,			                  XK_r,      spawn,		       SHCMD(TERMINAL " -e ranger") },
 	{ MODKEY,			                  XK_m,      spawn,		       SHCMD(TERMINAL " -e neomutt") },
