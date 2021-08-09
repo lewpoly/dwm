@@ -110,8 +110,8 @@ static Key keys[] = {
 	{ MODKEY,			                  XK_w,                      spawn,		       {.v = webcmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = +1 } },
 	{ MODKEY,                       XK_j,                      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_k,                      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,                      incnmaster,     {.i = +1 } },
@@ -144,11 +144,11 @@ static Key keys[] = {
 	{ 0,                            XK_F11,                    spawn,          {.v = downvol } },
 	{ 0,                            XK_F9,                     spawn,          {.v = mutevol } },
 	{ 0,                            XK_F12,                    spawn,          {.v = upvol   } },
-  { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v = brupcmd}},
-  { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v = brdowncmd}},
-	{ 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute,          spawn, {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = upvol   } },
+  { 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = brupcmd}},
+  { 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = brdowncmd}},
+	{ 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
+	{ 0,                            XF86XK_AudioMute,          spawn,          {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol   } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
