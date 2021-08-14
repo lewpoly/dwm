@@ -47,10 +47,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class           instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",          NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Alacritty",     NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,            NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class           instance  title           tags mask   iscentered  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",          NULL,     NULL,           0,          1,          1,          0,           0,        -1 },
+	{ "Alacritty",     NULL,     NULL,           0,          0,          0,          1,           0,        -1 },
+	{ NULL,            NULL,     "Event Tester", 0,          0,          0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -103,7 +103,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_BackSpace,              spawn,          SHCMD("sysact") },
 	{ MODKEY,			                  XK_p,                      spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
 	{ MODKEY,			                  XK_r,                      spawn,		       SHCMD(TERMINAL " -e ranger") },
-	{ MODKEY,			                  XK_m,                      spawn,		       SHCMD(TERMINAL " -e neomutt") },
 	{ MODKEY,			                  XK_y,                      spawn,		       SHCMD("flameshot gui -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_y,                      spawn,		       SHCMD("flameshot full -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_v,                      spawn,		       SHCMD("mpv /dev/video0") },
