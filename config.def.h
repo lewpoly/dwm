@@ -15,7 +15,7 @@ static       int smartgaps              = 0;        /* 1 means no outer gap when
 static const int swallowfloating        = 0;        /* 1 means swallow floating windows by default */
 static const int showbar                = 1;        /* 0 means no bar */
 static const int topbar                 = 1;        /* 0 means bottom bar */
-static const char *fonts[]              = { "Iosevka Extended:size=11", "JoyPixels:size=11", "FuraCode Nerd Font:size=11" };
+static const char *fonts[]              = { "Iosevka Extended:size=11", "JoyPixels:size=9", "FuraCode Nerd Font:size=11" };
 static const char *brupcmd[]            = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[]          = { "brightnessctl", "set", "10%-", NULL };
 static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
