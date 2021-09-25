@@ -5,7 +5,7 @@
 #define TERMCLASS "Alacritty"
 
 /* appearance */
-static const unsigned int borderpx      = 2;        /* border pixel of windows */
+static const unsigned int borderpx      = 1;        /* border pixel of windows */
 static const unsigned int snap          = 32;       /* snap pixel */
 static const unsigned int gappih        = 23;       /* horiz inner gap between windows */
 static const unsigned int gappiv        = 23;       /* vert inner gap between windows */
@@ -21,16 +21,16 @@ static const char *brdowncmd[]          = { "brightnessctl", "set", "10%-", NULL
 static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
-static const char col_gray1[]           = "#282828";
+static const char col_gray1[]           = "#05060b";
 static const char col_gray2[]           = "#D8DEE9";
 static const char col_gray3[]           = "#bbbbbb";
 static const char col_gray4[]           = "#eeeeee";
-static const char col_cyan[]            = "#7daea3";
-static const unsigned int baralpha     = 250;
+static const char col_cyan[]            = "#36b397";
+static const unsigned int baralpha     = 0xd0;
 static const unsigned int borderalpha  = OPAQUE;
 static const char *colors[][3]          = {
  	/*               fg         bg         border   */
- 	[SchemeNorm] = { col_gray3, col_gray1, col_gray3 },
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
  	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
 };
 static const unsigned int alphas[][3]      = {
@@ -179,6 +179,7 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
