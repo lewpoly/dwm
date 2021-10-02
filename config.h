@@ -22,16 +22,16 @@ static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume",
 static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
 static const char col_gray1[]           = "#282828";
-static const char col_gray2[]           = "#D8DEE9";
+static const char col_gray2[]           = "#a89984";
 static const char col_gray3[]           = "#ebdbb2";
-static const char col_gray4[]           = "#eeeeee";
-static const char col_cyan[]            = "#458588";
-static const unsigned int baralpha     = 225;
+static const char col_gray4[]           = "#fabd2f";
+static const char col_cyan[]            = "#d3869b";
+static const unsigned int baralpha     = 190;
 static const unsigned int borderalpha  = OPAQUE;
 static const char *colors[][3]          = {
  	/*               fg         bg         border   */
  	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
- 	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
+ 	[SchemeSel]  = { col_gray4, col_gray1,  col_gray4  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
