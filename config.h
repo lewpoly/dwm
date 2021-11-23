@@ -7,12 +7,10 @@
 /* appearance */
 static const unsigned int borderpx      = 2;        /* border pixel of windows */
 static const unsigned int snap          = 15;       /* snap pixel */
-static const unsigned int gappih        = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv        = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh        = 8;        /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov        = 10;       /* vert outer gap between windows and screen edge */
-static const int vertpad                = 8;        /* vertical padding of bar */
-static const int sidepad                = 10;       /* horizontal padding of bar */
+static const unsigned int gappih        = 18;       /* horiz inner gap between windows */
+static const unsigned int gappiv        = 18;       /* vert inner gap between windows */
+static const unsigned int gappoh        = 18;        /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov        = 18;       /* vert outer gap between windows and screen edge */
 static       int smartgaps              = 0;        /* 1 means no outer gap when there is only one window */
 static const int swallowfloating        = 0;        /* 1 means swallow floating windows by default */
 static const int showbar                = 1;        /* 0 means no bar */
@@ -28,7 +26,7 @@ static const char col_gray2[]           = "#a89984";
 static const char col_gray3[]           = "#ebdbb2";
 static const char col_gray4[]           = "#ffcc66";
 static const char col_cyan[]            = "#a3be8c";
-static const unsigned int baralpha     = 135;
+static const unsigned int baralpha     = 190;
 static const unsigned int borderalpha  = OPAQUE;
 static const char *colors[][3]          = {
  	/*               fg         bg         border   */
