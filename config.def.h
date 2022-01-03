@@ -99,12 +99,12 @@ static Key keys[] = {
 	/* modifier                     key                        function        argument */
 	{ MODKEY,                       XK_d,                      spawn,          SHCMD("dmenu_run -c -l 15") },
 	{ MODKEY,                       XK_BackSpace,              spawn,          SHCMD("sysact") },
-	{ MODKEY,			                  XK_semicolon,                      spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
+	{ MODKEY,			                  XK_semicolon,              spawn,		       SHCMD("feh --bg-fill --randomize ~/pics/wallpaper/* &") },
 	{ MODKEY,			                  XK_r,                      spawn,		       SHCMD(TERMINAL " -e ranger") },
 	{ MODKEY,			                  XK_y,                      spawn,		       SHCMD("flameshot gui -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_y,                      spawn,		       SHCMD("flameshot full -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_v,                      spawn,		       SHCMD("mpv /dev/video0") },
-  { MODKEY,                       XK_a,                      spawn,          SHCMD("skippy-xd") },
+  { MODKEY,                       XK_Tab,                    spawn,          SHCMD("skippy-xd") },
 	{ MODKEY,			                  XK_w,                      spawn,		       {.v = webcmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
@@ -121,7 +121,7 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_z,                      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask,              XK_g,                      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_g,                      defaultgaps,    {0} },
-	{ MODKEY,                       XK_Tab,                    view,           {0} },
+	{ MODKEY|ShiftMask,             XK_Tab,                    view,           {0} },
 	{ MODKEY,                       XK_q,                      killclient,     {0} },
 	{ MODKEY,                       XK_t,                      setlayout,      {.v = &layouts[0]} }, //tile
 	{ MODKEY,                       XK_m,                      setlayout,      {.v = &layouts[1]} }, //monocle
