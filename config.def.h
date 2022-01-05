@@ -107,7 +107,7 @@ static Key keys[] = {
   { MODKEY,                       XK_Tab,                    spawn,          SHCMD("skippy-xd --toggle-window-picker") },
 	{ MODKEY,			                  XK_w,                      spawn,		       {.v = webcmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
+	{ MODKEY,                       XK_b,                      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = +1 } },
 	{ MODKEY,                       XK_j,                      focusstack,     {.i = -1 } },
