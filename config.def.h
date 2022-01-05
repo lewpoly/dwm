@@ -104,7 +104,7 @@ static Key keys[] = {
 	{ MODKEY,			                  XK_y,                      spawn,		       SHCMD("flameshot gui -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_y,                      spawn,		       SHCMD("flameshot full -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_v,                      spawn,		       SHCMD("mpv /dev/video0") },
-  { MODKEY,                       XK_Tab,                    spawn,          SHCMD("skippy-xd") },
+  { MODKEY,                       XK_Tab,                    spawn,          SHCMD("skippy-xd --toggle-window-picker") },
 	{ MODKEY,			                  XK_w,                      spawn,		       {.v = webcmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
