@@ -18,9 +18,9 @@ static const int topbar                 = 1;        /* 0 means bottom bar */
 static const char *fonts[]              = { "FiraCode Nerd Font:size=11", "JoyPixels:size=9" };
 static const char *brupcmd[]            = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[]          = { "brightnessctl", "set", "10%-", NULL };
-static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
-static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
-static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
+/* static const char *upvol[]              = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL }; */
+/* static const char *downvol[]            = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL }; */
+/* static const char *mutevol[]            = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL }; */
 static const char col_gray1[]           = "#000000";
 static const char col_gray2[]           = "#a89984";
 static const char col_gray3[]           = "#ebdbb2";
@@ -106,7 +106,7 @@ static Key keys[] = {
 	{ MODKEY,			                  XK_y,                      spawn,		       SHCMD("flameshot screen -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_y,                      spawn,		       SHCMD("flameshot gui -p ~/pics/screenshots") },
 	{ MODKEY|ShiftMask,			        XK_v,                      spawn,		       SHCMD("mpv /dev/video0") },
-  { MODKEY,                       XK_a,                      spawn,          SHCMD("skippy-xd") },
+  { MODKEY,                       XK_Tab,                    spawn,          SHCMD("skippy-xd --toggle-window-picker") },
 	{ MODKEY,			                  XK_w,                      spawn,		       {.v = webcmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                      togglebar,      {0} },
@@ -123,7 +123,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,                      incrgaps,       {.i = +1 } },
 	{ MODKEY,                       XK_g,                      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_g,                      defaultgaps,    {0} },
-	{ MODKEY,                       XK_Tab,                    view,           {0} },
+	{ MODKEY|ShiftMask,             XK_Tab,                    view,           {0} },
 	{ MODKEY,                       XK_q,                      killclient,     {0} },
 	{ MODKEY,                       XK_t,                      setlayout,      {.v = &layouts[0]} }, //tile
 	{ MODKEY,                       XK_m,                      setlayout,      {.v = &layouts[1]} }, //monocle
@@ -141,14 +141,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period,                 tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,		        XK_comma,                  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period,                 cyclelayout,    {.i = +1 } },
-	{ 0,                            XK_F11,                    spawn,          {.v = downvol } },
-	{ 0,                            XK_F9,                     spawn,          {.v = mutevol } },
-	{ 0,                            XK_F12,                    spawn,          {.v = upvol   } },
+ 	{ 0,                            XK_F11,                    spawn,          SHCMD("volume.sh down") },
+	{ 0,                            XK_F10,                    spawn,          SHCMD("volume.sh mute") },
+	{ 0,                            XK_F12,                    spawn,          SHCMD("volume.sh up") },
   { 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = brupcmd}},
   { 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = brdowncmd}},
-	{ 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute,          spawn,          {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol   } },
+	{ 0,                            XF86XK_AudioLowerVolume,   spawn,          SHCMD("volume.sh down") },
+	{ 0,                            XF86XK_AudioMute,          spawn,          SHCMD("volume.sh mute") },
+	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          SHCMD("volume.sh up") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
